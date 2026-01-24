@@ -199,7 +199,7 @@ footer {
   }
 }
 .TodoList li {
-  transition: all 0.8s ease; /* smooth transition */
+  transition: all 0.5s ease; /* smooth transition */
   opacity: 1;
   transform: translateX(0);
 }
