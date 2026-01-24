@@ -203,6 +203,7 @@ footer {
   opacity: 1;
   transform: translateX(0);
 }
+/* added extra things for transition */
 
 .TodoList li.removing {
   opacity: 0;
