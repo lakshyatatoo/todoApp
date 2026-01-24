@@ -1,0 +1,210 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body & Main Container */
+body {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+main {
+  background: #fff;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  padding: 20px 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Header / Navbar */
+main h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #ff6b6b;
+}
+
+main h1::before {
+  width: 30px;
+  height: 30px;
+}
+
+main::after {
+  content: "made by lakshya tatoo";
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Add Todo Section */
+section:first-of-type {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.TodoInput {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #ff6b6b;
+  outline: none;
+  font-size: 1rem;
+}
+
+.TodoAdd {
+  background-color: #ff6b6b;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.TodoAdd:hover {
+  background-color: #ff4757;
+}
+
+/* Filters Section */
+section:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+section:nth-of-type(2) button {
+  background: #ffe66d;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+section:nth-of-type(2) button:hover {
+  background: #ffd93d;
+}
+
+/* Todo List */
+.TodoList {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.TodoList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f2f6;
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.TodoList li input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.TodoList li span {
+  flex: 1;
+  margin-left: 10px;
+  word-break: break-word;
+}
+
+.TodoList li span.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.delete-btn {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-btn:hover {
+  background: #ff4757;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ItemsLeft {
+  color: #555;
+  font-weight: 600;
+}
+
+.Clear {
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.Clear:hover {
+  background: #ff4757;
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  main {
+    padding: 15px 20px;
+  }
+
+  .TodoInput {
+    font-size: 0.9rem;
+  }
+
+  .TodoAdd,
+  .Clear,
+  section:nth-of-type(2) button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+}
+.TodoList li {
+  transition: all 0.8s ease; /* smooth transition */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.TodoList li.removing {
+  opacity: 0;
+  transform: translateX(50px); /* slides out while fading */
+}
