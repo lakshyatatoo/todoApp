@@ -25,7 +25,7 @@ main {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Header / Navbar */
+/* Header */
 main h1 {
   display: flex;
   align-items: center;
@@ -34,11 +34,6 @@ main h1 {
   font-size: 1.8rem;
   margin-bottom: 15px;
   color: #ff6b6b;
-}
-
-main h1::before {
-  width: 30px;
-  height: 30px;
 }
 
 main::after {
@@ -66,6 +61,7 @@ section:first-of-type {
   font-size: 1rem;
 }
 
+/* ADD BUTTON */
 .TodoAdd {
   background-color: #ff6b6b;
   border: none;
@@ -74,11 +70,12 @@ section:first-of-type {
   border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .TodoAdd:hover {
-  background-color: #ff4757;
+  background-color: #7b2cbf; /* medium purple */
+  transform: scale(1.08);
 }
 
 /* Filters Section */
@@ -96,11 +93,14 @@ section:nth-of-type(2) button {
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
+/* ACTIVE & COMPLETED BUTTON HOVER */
 section:nth-of-type(2) button:hover {
-  background: #ffd93d;
+  background: #7b2cbf; /* medium purple */
+  color: #fff;
+  transform: scale(1.08);
 }
 
 /* Todo List */
@@ -118,18 +118,14 @@ section:nth-of-type(2) button:hover {
   border-radius: 12px;
   margin-bottom: 10px;
   font-size: 1rem;
+  transition: all 0.5s ease;
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.TodoList li input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.TodoList li span {
-  flex: 1;
-  margin-left: 10px;
-  word-break: break-word;
+.TodoList li.removing {
+  opacity: 0;
+  transform: translateX(50px);
 }
 
 .TodoList li span.completed {
@@ -144,11 +140,12 @@ section:nth-of-type(2) button:hover {
   border-radius: 8px;
   padding: 5px 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .delete-btn:hover {
   background: #ff4757;
+  transform: scale(1.08);
 }
 
 /* Footer */
@@ -163,6 +160,7 @@ footer {
   font-weight: 600;
 }
 
+/* CLEAR COMPLETED BUTTON */
 .Clear {
   background: #ff6b6b;
   color: #fff;
@@ -170,14 +168,15 @@ footer {
   border-radius: 10px;
   padding: 7px 15px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
 .Clear:hover {
-  background: #ff4757;
+  background: #000; /* black */
+  transform: scale(1.08);
 }
 
-/* Responsive - Mobile */
+/* Responsive */
 @media (max-width: 480px) {
   main {
     padding: 15px 20px;
@@ -197,15 +196,4 @@ footer {
   main h1 {
     font-size: 1.5rem;
   }
-}
-.TodoList li {
-  transition: all 0.5s ease; /* smooth transition */
-  opacity: 1;
-  transform: translateX(0);
-}
-/* added extra things for transition */
-
-.TodoList li.removing {
-  opacity: 0;
-  transform: translateX(50px); /* slides out while fading */
 }
